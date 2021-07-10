@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>标签: 深度学习 - AnoI</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="AnoI"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="AnoI"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="AnoI"><meta property="og:url" content="http://example.com/"><meta property="og:site_name" content="AnoI"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:author" content="Kang Xiatao"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com"},"headline":"AnoI","image":["http://example.com/img/og_image.png"],"author":{"@type":"Person","name":"Kang Xiatao"},"publisher":{"@type":"Organization","name":"AnoI","logo":{"@type":"ImageObject","url":"http://example.com/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="AnoI" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">类别</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="To GitHub" href="https://github.com/kangxiatao"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">深度学习</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-07-01T09:52:41.000Z" title="2021/7/1 下午5:52:41">2021-07-01</time>发表</span><span class="level-item"><time dateTime="2021-07-01T15:05:21.728Z" title="2021/7/1 下午11:05:21">2021-07-01</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">学习日志</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/07/01/%E5%85%B3%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%89%87%E9%9D%A2%E6%80%BB%E7%BB%93/">关于深度学习的片面总结</a></h1><div class="content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Deep Learning 一书被成为AI圣经，中文译者张志华老师说道：它告诉我们深度学习集技术、科学与艺术于一体，涉及统计、优化、矩阵、算法、编程、分布式计算等多个邻域。</p>
+<p>这也意味着深度学习的门槛，当我作为一个萌新学者看这本书的时候，实在是难读和枯燥，但通过一年的实战再回来看这本书，收获颇丰，所以我决定再次研读“圣经”，并结合相应邻域的论文学习，同时我会尽可能的实践，然后根据拙见逐步的写完这篇总结，毕竟行万里路读万卷书嘛。</p>
+<p>吐槽：我累了，学不动了，还有些别的事情要做，估计最近是不会写了。</p>
+<h2 id="机器学习基础"><a href="#机器学习基础" class="headerlink" title="机器学习基础"></a>机器学习基础</h2><p>我先总结下深度学习的模型，这里之后再来补充<br>break</p>
+<h2 id="深度学习网络模型"><a href="#深度学习网络模型" class="headerlink" title="深度学习网络模型"></a>深度学习网络模型</h2><h3 id="卷积神经网络-Convolutional-Neural-Networks-CNNs"><a href="#卷积神经网络-Convolutional-Neural-Networks-CNNs" class="headerlink" title="卷积神经网络 Convolutional Neural Networks (CNNs)"></a>卷积神经网络 Convolutional Neural Networks (CNNs)</h3><h4 id="图像分类"><a href="#图像分类" class="headerlink" title="图像分类"></a>图像分类</h4><ul>
+<li>LeNet</li>
+<li>AlexNet</li>
+<li>VggNet</li>
+<li>GoogLeNet</li>
+<li>DenseNet</li>
+<li>ResNet</li>
+<li>MobileNet</li>
+<li>ShuffleNet</li>
+<li>EfficientNet</li>
+</ul>
+<h4 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h4><ul>
+<li>Faster-RCNN/FPN</li>
+<li>SSD/RetinaNet</li>
+<li>YOLOv3 SPP</li>
+</ul>
+<h3 id="循环神经网络-Recurrent-Neural-Networks-RNNs"><a href="#循环神经网络-Recurrent-Neural-Networks-RNNs" class="headerlink" title="循环神经网络 Recurrent Neural Networks (RNNs)"></a>循环神经网络 Recurrent Neural Networks (RNNs)</h3><pre><code>00
+</code></pre><h3 id="自动编码器-Autoencoders"><a href="#自动编码器-Autoencoders" class="headerlink" title="自动编码器 Autoencoders"></a>自动编码器 Autoencoders</h3><pre><code>00
+</code></pre><h3 id="蒙特卡罗方法"><a href="#蒙特卡罗方法" class="headerlink" title="蒙特卡罗方法"></a>蒙特卡罗方法</h3><pre><code>00
+</code></pre><h3 id="深度生成模型"><a href="#深度生成模型" class="headerlink" title="深度生成模型"></a>深度生成模型</h3><pre><code>00
+</code></pre></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-06-29T05:55:43.000Z" title="2021/6/29 下午1:55:43">2021-06-29</time>发表</span><span class="level-item"><time dateTime="2021-07-01T09:59:39.233Z" title="2021/7/1 下午5:59:39">2021-07-01</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">学习日志</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/06/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8F%91%E5%B1%95/">机器学习和深度神经网络的发展</a></h1><div class="content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在我了解机器学习和深度神经网络之前，它已被称为第四次工业革命的引擎。抱着对人工智能的好奇和向往，我很果断的抛弃了原先的嵌入式和控制编程，也很顺利的把机器学习作为了我的学业课题。</p>
+<p>那么正巧是毕业季，我在人工智能邻域也学了近一年，现在看来，神经网络和任何编程一样都是老笨蛋了，但是神经网络效果好是真的好，以至于大牛们都一边看不起神经网络一边真香。</p>
+<p>最近任务不是很重，想着做个总结，于是我结合 <a href="[https://link](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=9420077">Advances in Machine Learning and Deep Neural Networks</a>) 等多文章和我自己的理解写下了这篇博客。</p>
+<h2 id="其修远兮"><a href="#其修远兮" class="headerlink" title="其修远兮"></a>其修远兮</h2><p>人工智能是在1986年前后被整合的一个独立邻域，机器学习只是人工智能的一个分支，直到2010年，神经网络得益于大数据集和硬件算力大展身手，成为人工智能的主导。</p>
+<p>当然神经网络的缺陷也很明显，需要大量的数据和算力，在应用层次是一个巨大的问题。云计算是最广泛的解决办法，联合学习和边缘计算也克服了许多挑战，同时在神经网络压缩方面也做了很多工作。</p>
+<p>现在已经很难想象没有应用ML的领域了，通过这十年的发展，似乎已经达到一些饱和了，那么下一个飞跃是什么？</p>
+<p>大家都在寻求突破，比如硬件方面新的计算概念和高能效的架构，比如安全性和可解释性问题，又比如神经网络能否从预测到理性的判断。在各资本家利用如今神经网络取得的成效赚得盆丰钵满的时候，只有学者们才知道人工智能的路还很遥远。</p>
+<h2 id="上下求索"><a href="#上下求索" class="headerlink" title="上下求索"></a>上下求索</h2><p>上述的一些问题其实是各专家撰写的一些论文，他们试图为这些问题提供一些答案，同时也总结了相关领域已经开展的研究。</p>
+<p>在理论方面，涉及深度网络背景下的因果推理、对抗性学习、图形深度网络、深度网络的样条近似视图、超参数网络分析以及采用热带几何作为最大似然方法的工具。所有这些论文都处理了一些与最大似然和深层网络相关的开放性问题和主要挑战，并试图为未来提供可能的途径。</p>
+<p>在应用方面，相关论文提供了对最近相关结果的综述。具体来说，考虑异常检测、医学成像、计算机视觉、用于图像和视频合成的生成对抗网络、计算媒体智能/多模式多媒体和无线通信。</p>
+<p>在硬件方面，两篇论文致力于大脑启发的算法和神经形态计算。</p>
+<p>把相关论文先🐎在下面，之后再细看。</p>
+<h2 id="理论和算法"><a href="#理论和算法" class="headerlink" title="理论和算法"></a>理论和算法</h2><p><strong>Toward Causal Representation Learning</strong><br>（走向因果表征）</p>
+<p>一种因果表示学习，从低级观察中发现高级因果变量。个人觉得结合大规模知识图谱应该能得到较为乐观的因果推理。</p>
+<p><strong>Optimism in the Face of Adversity: Understanding and Improving Deep Learning Through Adversarial Robustness</strong><br>（逆境中的乐观主义：通过对抗鲁棒性理解和提高深度学习）</p>
+<p>对抗样本现象给狂热的人群敲墙了警钟：深度网络似乎什么都知道，但其实什么都不知道。在深度学习中这确实是一个需要突破的地方，不然智能性和安全性都不能解决。</p>
+<p>作者强调了对抗性例子和深度神经网络几何之间的直观联系，并最终探索了对抗性例子的几何研究如何成为更好地理解深度学习的有力工具。</p>
+<p><strong>Graph Neural Networks: Architectures, Stability, and Transferability</strong><br>（图形神经网络:结构、稳定性和可移植性）</p>
+<p>图卷积相关。</p>
+<p><strong>Mathematical Models of Overparameterized Neural Networks</strong><br>（超参数神经网络的数学模型）</p>
+<p>关于求解过程中被限制在局部的一些讨论。</p>
+<p><strong>Mad Max: Affine Spline Insights Into Deep Learning</strong><br>（深入学习的仿射样条洞察）</p>
+<p>通过样条函数和算子，严格建立了深度网络和逼近理论之间的桥梁。（不理解，这篇超纲了，本人理论水平没达到）</p>
+<p><strong>Tropical Geometry and Machine Learning</strong><br>（热带几何与机器学习）</p>
+<p>热带几何是数学和计算机科学中一个相对较新的领域，结合了代数和多面体几何的元素。热带几何最近出现在经典机器学习和深度学习的几类问题和系统的分析和扩展中。</p>
+<p>作者建立了研究分段线性激活神经网络表示能力的纯几何方法。然后考虑参数统计模型的热带几何分析，如HMMs。<br>（又超纲了，似乎老师带我做的一个卷积核超立方分析可以参考热带几何相关论文）</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p><strong>A Unifying Review of Deep and Shallow Anomaly Detection</strong><br>（深浅异常检测综述）</p>
+<p>异常检测的深度学习技术提高了复杂数据集(如大量图像或文本集合)的检测性能。在这篇文章中，作者旨在确定共同的基本原则以及各种方法隐含的假设。</p>
+<p><strong>Communication-Efficient and Distributed Learning Over Wireless Networks: Principles and Applications</strong><br>（无线网络上的高效通信和分布式学习：原理和应用）</p>
+<p>本文的目标是提供一个相关通信和最大似然原则的整体概述，从而用选定的用例展示高效通信和分布式最大似然框架。机器学习是第五代(5G)通信系统及更高版本的一个有前途的推动者。</p>
+<p><strong>A Review of Deep Learning in Medical Imaging: Imaging Traits, Technology Trends, Case Studies With Progress Highlights, and Future Promises</strong><br>（医学影像深度学习综述：影像特征、技术趋势、进展亮点案例研究和未来展望）</p>
+<p>如题。</p>
+<p><strong>Generative Adversarial Networks for Image and Video Synthesis: Algorithms and Applications</strong><br>（用于图像和视频合成的生成对抗网络：算法和应用）</p>
+<p>生成对抗网络是深度学习和一般机器学习的主要突破之一，在创作反面的应用也蛮多。</p>
+<p><strong>Tensor Methods in Computer Vision and Deep Learning</strong><br>（计算机视觉和深度学习中的张量方法）</p>
+<p>概述了表象学习和深度学习中的张量和张量方法，特别侧重于视觉数据分析和计算机视觉应用。</p>
+<p><strong>Computational Media Intelligence: Human-Centered Machine Analysis of Media</strong><br>（计算媒体智能：以人为中心的媒体机器分析）</p>
+<p>主题是深度学习算法的应用，结合视听信号处理，分析电影/电视等娱乐媒体。文本挖掘和自然语言处理允许对媒体(如新闻)中的语言使用和口语交互进行细致的理解，以跟踪不同上下文中的模式和趋势。</p>
+<h2 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h2><p><strong>Advancing Neuromorphic Computing With Loihi: A Survey of Results and Outlook</strong><br>（用Loihi推进神经形态计算：结果与展望）</p>
+<p>神经形态计算的目标是在芯片上实现学习算法，这些算法更直接地受到生物神经电路的形式和功能的启发，因此它们可以处理新知识、适应、表现和以低功率水平实时学习。</p>
+<p>英特尔的Loihi，是一款神经形态研究处理器，旨在支持广泛的脉冲神经网络，具有足够的规模、性能和特性，可提供与当代最先进的计算架构相比具有竞争力的结果。</p>
+<p>作者主要是做了一些测试和比较的分析。</p>
+<p><strong>Brain-Inspired Learning on Neuromorphic Substrates</strong><br>（基于神经形态底物的脑启发学习）</p>
+<p>本文提供了一个数学框架，设计实用的在线学习算法的神经形态基板。建立了实时循环学习 (RTRL)、用于计算传统循环神经网络 (RNN) 中梯度的在线算法与训练尖峰神经网络 (SNN) 的生物学上合理的学习规则之间的直接联系。</p>
+<p>这个框架弥补了突触可塑性和基于梯度的深度学习方法之间的差距，并为未来神经形态硬件系统的强大信息处理奠定了基础。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>深度学习目前为止相关的发展在上述论文中都有所提及，有些论文提供了一个较为新颖的角度，像对抗鲁棒性和热带几何这两篇我就印象深刻，之后可能会在这方面深入了解下。</p>
+<p>其实写到这里我又有点消极了，看着世界各地的大牛各抒己见，自有些想法又没这个能力和条件加入其中，很是难受。也是没想到会走上“科研”这条路，可惜我们所谓的科研也就是水论文罢了，哎，学术圈问题就不多说了，回到之前对自己码农的定位就挺好。</p>
+<p>总之，深度学习在未来很长一段时间都将是世界的主宰。</p>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="香槟酒气满天飞"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">香槟酒气满天飞</p><p class="is-size-6 is-block">有目标的人才迷路，我是来人间散步的</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>地球，银河系</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">8</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">18</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kangxiatao" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/kangxiatao"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Weibo" href="https://weibo.com/u/5639381621?ssl_rnd=1624881304.5599&amp;is_all=1"><i class="fab fa-weibo"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Douban" href="https://www.douban.com/people/anoi/"><i class="fab fa-douban"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://blog.csdn.net/kangxiatao?spm=1011.2124.3001.5343" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">CSDN</span></span><span class="level-right"><span class="level-item tag">blog.csdn.net</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/xx/"><span class="level-start"><span class="level-item">xx</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/"><span class="level-start"><span class="level-item">学习日志</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A0%81%E5%86%9C%E7%AC%94%E8%AE%B0/"><span class="level-start"><span class="level-item">码农笔记</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-07-01T09:52:41.000Z">2021-07-01</time></p><p class="title"><a href="/2021/07/01/%E5%85%B3%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E7%89%87%E9%9D%A2%E6%80%BB%E7%BB%93/">关于深度学习的片面总结</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">学习日志</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-30T15:10:52.000Z">2021-06-30</time></p><p class="title"><a href="/2021/06/30/VsCode%E9%85%8D%E7%BD%AELaTeX%E7%8E%AF%E5%A2%83/">VsCode配置LaTeX环境</a></p><p class="categories"><a href="/categories/%E7%A0%81%E5%86%9C%E7%AC%94%E8%AE%B0/">码农笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-29T05:55:43.000Z">2021-06-29</time></p><p class="title"><a href="/2021/06/29/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%92%8C%E6%B7%B1%E5%BA%A6%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8F%91%E5%B1%95/">机器学习和深度神经网络的发展</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">学习日志</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-28T14:44:10.000Z">2021-06-28</time></p><p class="title"><a href="/2021/06/28/GitHub%E5%92%8CHexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">GitHub和Hexo搭建博客</a></p><p class="categories"><a href="/categories/%E7%A0%81%E5%86%9C%E7%AC%94%E8%AE%B0/">码农笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-28T14:42:02.000Z">2021-06-28</time></p><p class="title"><a href="/2021/06/28/hello-myblog/">hello-myblog</a></p><p class="categories"><a href="/categories/xx/">xx</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">七月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Deep-Learning/"><span class="tag">Deep Learning</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GitHub/"><span class="tag">GitHub</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Google-Colab/"><span class="tag">Google Colab</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/LaTeX/"><span class="tag">LaTeX</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Machine-Learning/"><span class="tag">Machine Learning</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Neural-Network/"><span class="tag">Neural Network</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Reinforcement-Learning/"><span class="tag">Reinforcement Learning</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VsCode/"><span class="tag">VsCode</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/xx/"><span class="tag">xx</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%9A%E5%AE%A2/"><span class="tag">博客</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><span class="tag">强化学习</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"><span class="tag">服务器</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="tag">机器学习</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84/"><span class="tag">模型结构</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><span class="tag">深度学习</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span class="tag">神经网络</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8E%8B%E7%BC%A9/"><span class="tag">神经网络压缩</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div><p class="help">kangxiatao@gmail.com</p></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="AnoI" height="28"></a><p class="is-size-7"><span>&copy; 2021 Kang Xiatao</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="To WeiBo" href="https://weibo.com/u/5639381621?ssl_rnd=1624881304.5599&amp;is_all=1"><i class="fab fa-weibo"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="To GitHub" href="https://github.com/kangxiatao"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
