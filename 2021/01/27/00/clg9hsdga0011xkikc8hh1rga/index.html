@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh"><script src="/js/click.js"></script><script src="https://code.jquery.com/jquery-3.0.0.min.js"></script><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>强化学习（Reinforcement Learning） - AnoI</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="AnoI"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="AnoI"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="0. 人工不智能，机器爱学习什么课题什么方向都拉倒吧，强化学习才是AI的主宰！！！ 简单的做了个笔记，边学边补充。唉，就是玩：强化学习玩小游戏 主要参考：蘑菇书EasyRL、周志华机器学习、莫烦Python"><meta property="og:type" content="blog"><meta property="og:title" content="强化学习（Reinforcement Learning）"><meta property="og:url" content="http://example.com/2021/01/27/00/clg9hsdga0011xkikc8hh1rga/"><meta property="og:site_name" content="AnoI"><meta property="og:description" content="0. 人工不智能，机器爱学习什么课题什么方向都拉倒吧，强化学习才是AI的主宰！！！ 简单的做了个笔记，边学边补充。唉，就是玩：强化学习玩小游戏 主要参考：蘑菇书EasyRL、周志华机器学习、莫烦Python"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://wx1.sinaimg.cn/mw2000/0069EgM5gy1grzlnqtoerj30og0hdjt2.jpg"><meta property="og:image" content="https://wx1.sinaimg.cn/mw2000/0069EgM5gy1grzlnvfcpcj31dg0we0zy.jpg"><meta property="article:published_time" content="2021-01-26T16:00:58.000Z"><meta property="article:modified_time" content="2022-05-09T14:34:46.030Z"><meta property="article:author" content="Kang Xiatao"><meta property="article:tag" content="神经网络"><meta property="article:tag" content="Neural Network"><meta property="article:tag" content="强化学习"><meta property="article:tag" content="Reinforcement Learning"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://wx1.sinaimg.cn/mw2000/0069EgM5gy1grzlnqtoerj30og0hdjt2.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/01/27/00/clg9hsdga0011xkikc8hh1rga/"},"headline":"强化学习（Reinforcement Learning）","image":["https://wx1.sinaimg.cn/mw2000/0069EgM5gy1grzlnqtoerj30og0hdjt2.jpg","https://wx1.sinaimg.cn/mw2000/0069EgM5gy1grzlnvfcpcj31dg0we0zy.jpg"],"datePublished":"2021-01-26T16:00:58.000Z","dateModified":"2022-05-09T14:34:46.030Z","author":{"@type":"Person","name":"Kang Xiatao"},"publisher":{"@type":"Organization","name":"AnoI","logo":{"@type":"ImageObject","url":"http://example.com/img/logo.svg"}},"description":"0. 人工不智能，机器爱学习什么课题什么方向都拉倒吧，强化学习才是AI的主宰！！！ 简单的做了个笔记，边学边补充。唉，就是玩：强化学习玩小游戏 主要参考：蘑菇书EasyRL、周志华机器学习、莫烦Python"}</script><link rel="canonical" href="http://example.com/2021/01/27/00/clg9hsdga0011xkikc8hh1rga/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><script src="/js/cursor2.js"></script><script type="text/javascript">$.shuicheMouse();</script><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="AnoI" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">类别</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="To GitHub" href="https://github.com/kangxiatao"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-26T16:00:58.000Z" title="2021/1/27 00:00:58">2021-01-27</time>发表</span><span class="level-item"><time dateTime="2022-05-09T14:34:46.030Z" title="2022/5/9 22:34:46">2022-05-09</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">学习日志</a></span></div></div><h1 class="title is-3 is-size-4-mobile">强化学习（Reinforcement Learning）</h1><div class="content"><h2 id="0-人工不智能，机器爱学习"><a href="#0-人工不智能，机器爱学习" class="headerlink" title="0. 人工不智能，机器爱学习"></a>0. <strong>人工不智能，机器爱学习</strong></h2><p>什么课题什么方向都拉倒吧，强化学习才是AI的主宰！！！</p>
+<p>简单的做了个笔记，边学边补充。唉，就是玩：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14T4y1P7z9">强化学习玩小游戏</a></p>
+<p>主要参考：<a target="_blank" rel="noopener" href="https://github.com/datawhalechina/easy-rl">蘑菇书EasyRL</a>、周志华机器学习、<a target="_blank" rel="noopener" href="https://github.com/MorvanZhou/Reinforcement-learning-with-tensorflow">莫烦Python</a></p>
+<span id="more"></span>
+
+<p>从强化学习的几个元素的角度划分，方法主要有下面几类：</p>
+<ul>
+<li>policy-based agent, 基于策略的智能体，找最优策略。</li>
+<li>value-based agent, 基于价值的智能体，找最优奖励总和。</li>
+<li>action-critic agent, 演员评论员智能体，策略和价值都最优。</li>
+</ul>
+<p>然后又从不同的角度可以细分为：</p>
+<ul>
+<li>Model-free：不去理解环境，根据真实世界的反馈，采取下一步行动。</li>
+<li>Model-based：先理解理解环境，并建立一个虚拟环境，通过想象预判接下来要发生的所有情况，选择最好的情况作为下一步的策略。它比 Model-free 多出了虚拟环境和想象力。</li>
+<li>Policy based：通过感官分析所处的环境，得到下一步各种行为的概率，然后根据概率采取行动。</li>
+<li>Value based：输出的是所有动作的价值，根据最高价值来选动作，这类方法不能选取连续的动作。</li>
+<li>Monte-carlo update：结束时总结这一回合中的所有转折点，再更新行为准则。</li>
+<li>Temporal-difference update：环境中每一步都在更新，一直学习。</li>
+<li>On-policy：自身参与到环境中进行学习。</li>
+<li>Off-policy：可通过其他系统参与到环境得到的反馈进行学习。</li>
+</ul>
+<h2 id="1-Q-Learning"><a href="#1-Q-Learning" class="headerlink" title="1. Q-Learning"></a>1. <strong>Q-Learning</strong></h2><ul>
+<li><p><strong>1、算法思想</strong></p>
+<p>  Q-Learning属于value-based的算法，也是Off-policy，$Q$即为$Q(s,a)$就是在某一时刻的$s$状态下$(s∈S)$，采取动作$a(a∈A)$动作能够获得收益的期望，环境会根据动作反馈相应的回报reward r，所以算法的主要思想就是将State与Action构建成一张Q-table来存储Q值，然后根据Q值来选取能够获得最大的收益的动作。</p>
+</li>
+<li><p><strong>2、公式推导</strong></p>
+<p>  目标是求出累计奖励最大的策略的期望：<br>  $$<br>  \text { Goal: } \max <em>{\pi} E\left[\sum</em>{t&#x3D;0}^{H} \gamma^{t} R\left(S_{t}, A_{t}, S_{t+1}\right) \mid \pi\right]<br>  $$<br>  （$S$：状态集合，$A$：动作集合，$R$：回报函数，$H$：范围，$\gamma$：折损系数，$\pi$：在$S_{t}$状态下采取动作$A_{t}$策略 ）</p>
+<p>  时间差分法TD（融合了蒙特卡洛和动态规划）进行离线学习，使用bellman方程对马尔科夫过程求解最优策略，（此处有点模糊，待补充），更新公式如下：<br>  $$<br>  Q(s, a) \leftarrow Q(s, a)+\alpha\left[r+\gamma \max_{a^{\prime}} Q\left(s^{\prime}, a^{\prime}\right)-Q(s, a)\right]<br>  $$<br>  （$\alpha$：学习率，$\gamma$：奖励性衰变系数，$r$：回报值，$Q$：Q-table值）<br>  （$新Q(s, a) &#x3D; 老Q(s, a) + \alpha * (Q现实 - Q估计)$）<br>  （根据下一个状态$s^{\prime}$中选取最大的$Q\left(s^{\prime}, a^{\prime}\right)$值乘以衰变$\gamma$加上真实回报值$r$作为Q现实，之前Q表里面的$Q(s,a)$作为Q估计）</p>
+</li>
+</ul>
+<h2 id="2-Sarsa"><a href="#2-Sarsa" class="headerlink" title="2. Sarsa"></a>2. <strong>Sarsa</strong></h2><ul>
+<li><p><strong>1、算法思想</strong></p>
+<p>  Sarsa与Q-Learning一样，在更新table时有区别，它属于On-policy，训练过程中会比较保守，其实就是怂，Q-Learning是苏维埃，Sarsa就是美利坚。</p>
+<p>  相对于Sarsa来说，它的变种Sarsa($\lambda$)中多了一个矩阵E (eligibility trace)，用来保存在路径中所经历的每一步，因此在每次更新时也会对之前经历的步进行更新。</p>
+<p>  参数$\lambda$取值范围为$[0, 1]$，如果$\lambda &#x3D; 0$，Sarsa($\lambda$) 将退化为Sarsa，即只更新获取到 reward 前经历的最后一步；如果 $\lambda &#x3D; 1$，Sarsa($\lambda$) 更新的是获取到 reward 前的所有步。$\lambda$可理解为脚步的衰变值，即离最终目标越近的步越重要。</p>
+</li>
+</ul>
+<h2 id="3-Deep-Q-Network"><a href="#3-Deep-Q-Network" class="headerlink" title="3. Deep Q Network"></a>3. <strong>Deep Q Network</strong></h2><ul>
+<li><p><strong>1、算法思想</strong></p>
+<p>  Q-Leanring在状态和动作空间是高维连续时，使用Q-table表示动作空间和状态就很困难。</p>
+<p>  DQN用神经网络来拟合一个函数代替Q-table，使用一个eval_net产生Q估计（当前网络），使用另外一个target_net产生Q现实（目标网络），同时它设置了一个experience replay（经验池）用于存放之前的动作和状态，在学习过程中随机的加入之前的经验让神经网络更有效率。</p>
+<p>  <img src="https://wx1.sinaimg.cn/mw2000/0069EgM5gy1grzlnqtoerj30og0hdjt2.jpg" alt="DQN"></p>
+<p>  Double DQN和Nature DQN结构一样，在Nature DQN的基础上，先在当前Q网络中先找出最大Q值对应的动作，再把这个动作放到目标网络里面去计算目标Q值，来消除过度估计的问题。</p>
+<p>  Prioritized Experience Replay (DQN)，字面意思就可以理解，就是把样本做一个优先级处理，一般SumTree树形结构排序，batch抽样的时候不是随机抽样，按照Memory中的样本优先级来抽，更有效地找到需要学习的样本。</p>
+<p>  Dueling DQN把特征层和输出层之间的全连接层分成了两部分，一部分用于近似state-value V(s)，另一部分近似Advantage-Function A(s, a)，求和得到最终的Q(s, a)。</p>
+<p>  <img src="https://wx1.sinaimg.cn/mw2000/0069EgM5gy1grzlnvfcpcj31dg0we0zy.jpg" alt="Dueling DQN"></p>
+</li>
+</ul>
+<h2 id="4-Policy-Gradients"><a href="#4-Policy-Gradients" class="headerlink" title="4. Policy Gradients"></a>4. <strong>Policy Gradients</strong></h2><ul>
+<li><p><strong>1、算法思想</strong></p>
+<p>  Policy Gradients可以在一个连续区间输出动作，利用reward值来引导某一个动作是否应该增加被选的概率（基于概率的算法），通过更新神经网络来决定输出策略，根据每一回合的输赢来判断该回合中的每一步是好还是坏（回合更新）。</p>
+</li>
+</ul>
+<h2 id="5-Actor-Critic"><a href="#5-Actor-Critic" class="headerlink" title="5. Actor Critic"></a>5. <strong>Actor Critic</strong></h2><ul>
+<li><p><strong>1、算法思想</strong></p>
+<p>  从 Critic （单步更新）评判模块得到对动作的好坏评价，然后反馈给 Actor，也就是乘以Actor的输出值（策略概率），让 Actor 更新自己的策略。这两个模块用不同的神经网络来代替。Actor Critic的不足之处在于：每次都是在连续状态中更新参数，每次参数更新前后都存在相关性，导致神经网络只能片面的看待问题，甚至导致神经网络学不到东西。</p>
+</li>
+</ul>
+<h2 id="6-Deep-Deterministic-Policy-Gradient（DDPG）"><a href="#6-Deep-Deterministic-Policy-Gradient（DDPG）" class="headerlink" title="6. Deep Deterministic Policy Gradient（DDPG）"></a>6. <strong>Deep Deterministic Policy Gradient（DDPG）</strong></h2><ul>
+<li><p><strong>1、算法思想</strong></p>
+<p>  Deep Deterministic Policy Gradient可拆解为两大部分：Deep和Deterministic Policy Gradient。Deep指的是DQN算法中使用一个记忆库和两个结构相同但参数不同的神经网络。Deterministic Policy Gradient指：Policy Gradient本是随机选择一个分布的动作，但现在Deterministic Policy Gradient改变了输出动作过程，使得输出更加确定。</p>
+</li>
+</ul>
+<h2 id="7-Asynchronous-Advantage-Actor-Critic（A3C）"><a href="#7-Asynchronous-Advantage-Actor-Critic（A3C）" class="headerlink" title="7. Asynchronous Advantage Actor-Critic（A3C）"></a>7. <strong>Asynchronous Advantage Actor-Critic（A3C）</strong></h2><ul>
+<li><p><strong>1、算法思想</strong></p>
+<p>  创建多个并行环境，让多个拥有副结构的agent同时在这些并行环境上更新主环境中的参数（效率高）。并行的agent互不干扰，且主环境的更新受到副结构更新的不连续干扰（相关性降低，收敛性提高）。类似于有多个相同的机器人共同干着一件事，比如玩游戏，他们的经验上传到中央大脑，又从中央大脑获取到玩游戏的方法。</p>
+</li>
+</ul>
+<h2 id="8-Proximal-Policy-Optimization（PPO）"><a href="#8-Proximal-Policy-Optimization（PPO）" class="headerlink" title="8. Proximal Policy Optimization（PPO）"></a>8. <strong>Proximal Policy Optimization（PPO）</strong></h2><ul>
+<li><p><strong>1、算法思想</strong></p>
+<p>  PPO主要是限制更新步长，因为学习速率慢时间就长，学习速率快就容易躁动。限制的部分就在于actor的更新，A会乘一个新旧概率比，如果差距大优势大那么学习幅度就加大，同时还要减去一个新旧的分布的KL，做以惩罚项，让他们不要差距太大。另外也可以不要KL的惩罚项，因为惩罚也是为了限制它的更新速度，那么直接对新旧比的出现幅度进行控制就可以了。（比如倍数不超过多少倍），即clip。</p>
+<p>  Distributed PPO就是类似与AC3的多线程。</p>
+</li>
+</ul>
+</div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">神经网络</a><a class="link-muted mr-2" rel="tag" href="/tags/Neural-Network/">Neural Network</a><a class="link-muted mr-2" rel="tag" href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">强化学习</a><a class="link-muted mr-2" rel="tag" href="/tags/Reinforcement-Learning/">Reinforcement Learning</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/05/04/13/clg9hsdi1004dxkik3wic401z/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">神经网络剪枝类论文阅读笔记</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/01/07/00/clg9hsdf80001xkik245r6uzl/"><span class="level-item">Google Colaboratory的配置和使用</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="香槟酒气满天飞"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">香槟酒气满天飞</p><p class="is-size-6 is-block">有目标的人才迷路，我是来人间散步的</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>地球，银河系，C137宇宙</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">38</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kangxiatao" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/kangxiatao"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="哔哩哔哩" href="https://space.bilibili.com/26509662"><i class="fab fa-youtube"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="豆瓣" href="https://www.douban.com/people/anoi/"><i class="fab fa-imdb"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#0-人工不智能，机器爱学习"><span class="level-left"><span class="level-item">0. 人工不智能，机器爱学习</span></span></a></li><li><a class="level is-mobile" href="#1-Q-Learning"><span class="level-left"><span class="level-item">1. Q-Learning</span></span></a></li><li><a class="level is-mobile" href="#2-Sarsa"><span class="level-left"><span class="level-item">2. Sarsa</span></span></a></li><li><a class="level is-mobile" href="#3-Deep-Q-Network"><span class="level-left"><span class="level-item">3. Deep Q Network</span></span></a></li><li><a class="level is-mobile" href="#4-Policy-Gradients"><span class="level-left"><span class="level-item">4. Policy Gradients</span></span></a></li><li><a class="level is-mobile" href="#5-Actor-Critic"><span class="level-left"><span class="level-item">5. Actor Critic</span></span></a></li><li><a class="level is-mobile" href="#6-Deep-Deterministic-Policy-Gradient（DDPG）"><span class="level-left"><span class="level-item">6. Deep Deterministic Policy Gradient（DDPG）</span></span></a></li><li><a class="level is-mobile" href="#7-Asynchronous-Advantage-Actor-Critic（A3C）"><span class="level-left"><span class="level-item">7. Asynchronous Advantage Actor-Critic（A3C）</span></span></a></li><li><a class="level is-mobile" href="#8-Proximal-Policy-Optimization（PPO）"><span class="level-left"><span class="level-item">8. Proximal Policy Optimization（PPO）</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-09T03:45:03.000Z">2023-04-09</time></p><p class="title"><a href="/2023/04/09/11/clg9hsdgk001hxkik1zqqg04x/">研究下管理体系</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">学习日志</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-09T01:42:46.000Z">2023-04-09</time></p><p class="title"><a href="/2023/04/09/09/clg9hsdfy000mxkik405dcznv/">一个思考，关于硅基生命</a></p><p class="categories"><a href="/categories/%E6%B5%AE%E7%94%9F%E6%97%A5%E8%AE%B0/">浮生日记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-14T05:30:00.000Z">2023-03-14</time></p><p class="title"><a href="/2023/03/14/13/clg9hsdfo0009xkik9faxcqso/">ROS与Gazebo联合仿真平台搭建</a></p><p class="categories"><a href="/categories/%E7%A0%81%E5%86%9C%E7%AC%94%E8%AE%B0/">码农笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-10T01:09:00.000Z">2023-03-10</time></p><p class="title"><a href="/2023/03/10/09/clg9hsdfw000kxkik5eko3ft1/">以武服人</a></p><p class="categories"><a href="/categories/%E6%B5%AE%E7%94%9F%E6%97%A5%E8%AE%B0/">浮生日记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-29T03:01:43.000Z">2022-09-29</time></p><p class="title"><a href="/2022/09/29/11/clg9hsdgg001cxkikfjqx0u3a/">深度学习之底层实现</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">学习日志</a></p></div></article></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div><p class="help">kangxiatao@gmail.com</p></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="AnoI" height="28"></a><p class="is-size-7"><span>&copy; 2023 Kang Xiatao</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="To WeiBo" href="https://weibo.com/u/5639381621?ssl_rnd=1624881304.5599&amp;is_all=1"><i class="fab fa-weibo"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="To GitHub" href="https://github.com/kangxiatao"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
