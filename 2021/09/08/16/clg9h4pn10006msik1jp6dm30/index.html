@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>NLP 自然语言处理（Natural Language Processing） - AnoI</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="AnoI"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="AnoI"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="前言跟着师兄做知识图谱相关课题，果然知识图谱还是🉐和NLP结合，那就来把，先过一遍NLP。"><meta property="og:type" content="blog"><meta property="og:title" content="NLP 自然语言处理（Natural Language Processing）"><meta property="og:url" content="http://example.com/2021/09/08/16/clg9h4pn10006msik1jp6dm30/"><meta property="og:site_name" content="AnoI"><meta property="og:description" content="前言跟着师兄做知识图谱相关课题，果然知识图谱还是🉐和NLP结合，那就来把，先过一遍NLP。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:published_time" content="2021-09-08T08:57:06.000Z"><meta property="article:modified_time" content="2021-09-22T15:29:15.612Z"><meta property="article:author" content="Kang Xiatao"><meta property="article:tag" content="神经网络"><meta property="article:tag" content="自然语言处理"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/09/08/16/clg9h4pn10006msik1jp6dm30/"},"headline":"NLP 自然语言处理（Natural Language Processing）","image":["http://example.com/img/og_image.png"],"datePublished":"2021-09-08T08:57:06.000Z","dateModified":"2021-09-22T15:29:15.612Z","author":{"@type":"Person","name":"Kang Xiatao"},"publisher":{"@type":"Organization","name":"AnoI","logo":{"@type":"ImageObject","url":"http://example.com/img/logo.svg"}},"description":"前言跟着师兄做知识图谱相关课题，果然知识图谱还是🉐和NLP结合，那就来把，先过一遍NLP。"}</script><link rel="canonical" href="http://example.com/2021/09/08/16/clg9h4pn10006msik1jp6dm30/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="AnoI" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">类别</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="To GitHub" href="https://github.com/kangxiatao"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-09-08T08:57:06.000Z" title="2021/9/8 16:57:06">2021-09-08</time>发表</span><span class="level-item"><time dateTime="2021-09-22T15:29:15.612Z" title="2021/9/22 23:29:15">2021-09-22</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">学习日志</a></span></div></div><h1 class="title is-3 is-size-4-mobile">NLP 自然语言处理（Natural Language Processing）</h1><div class="content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>跟着师兄做知识图谱相关课题，果然知识图谱还是🉐和NLP结合，那就来把，先过一遍NLP。</p>
+<span id="more"></span>
+
+<p>早期的自然语言处理是基于规则来建立词汇、句法语义分析。</p>
+<p>后来的统计自然语言处理基于人工定义的特征建立机器学习系统。</p>
+<p>现在基本上都是神经网络自然语言处理，之前的NLP方法简单做了些了解，接下来的学习就是从神经网络自然语言处理开始了。</p>
+<h2 id="神经网络自然语言处理的基本思想"><a href="#神经网络自然语言处理的基本思想" class="headerlink" title="神经网络自然语言处理的基本思想"></a>神经网络自然语言处理的基本思想</h2><h3 id="理解词语"><a href="#理解词语" class="headerlink" title="理解词语"></a>理解词语</h3><ul>
+<li><p>词向量<br>  把词映射到空间中，根据夹角、距离和长短等判断词的相似性。</p>
+</li>
+<li><p>Continuous Bag of Words (CBOW)<br>  前后的词预测中间的词</p>
+</li>
+<li><p>Skip-Gram<br>  中间的词预测前后的词</p>
+</li>
+</ul>
+<h3 id="理解句子"><a href="#理解句子" class="headerlink" title="理解句子"></a>理解句子</h3><ul>
+<li><p>句向量</p>
+<p>  通过模型，得到的机器对于一句话的理解，对于这个理解，也就是向量，使用的方法不止一种。</p>
+</li>
+<li><p>Encoding</p>
+<p>  得到词向量之后，使用神经网络做复杂乘法运算得到句向量，也就是把多个词空间向量通过神经网络映射到另一个空间做句向量。<br>  Encoding过程类似压缩的过程，将大量复杂的信息，压缩成少量经典的信息，通过这个途径找到信息的精华部分。</p>
+</li>
+<li><p>Decoding</p>
+<p>  Encoding得到的句向量就是机器对句子的理解，那么可以用另一个神经网络对句向量做各种各样的解码操作。<br>  简而言之，Encoder负责理解上文，Decoder负责将思考怎么样在理解的句子的基础上做任务。</p>
+</li>
+<li><p>Seq2Seq</p>
+<p>  seq2seq属于encoder-decoder结构的一种，常见的encoder-decoder结构，基本思想就是利用两个RNN，一个RNN作为encoder，另一个RNN作为decoder。encoder负责将输入序列压缩成指定长度的向量，这个向量就可以看成是这个序列的语义，这个过程称为编码，而decoder则负责根据语义向量生成指定的序列，这个过程也称为解码。</p>
+</li>
+</ul>
+<h2 id="循环神经网络"><a href="#循环神经网络" class="headerlink" title="循环神经网络"></a>循环神经网络</h2><p>RNNs的目的是用来处理序列数据，不只是在NLP领域取得巨大成功，在其他领域也有一席之地，比如图像描述生成和路径判断等也有不错的效果。</p>
+<ul>
+<li><p>Simple RNN</p>
+<p>  也就是基础的RNN网络，也被称为Vanilla RNN</p>
+</li>
+<li><p>Bidirectional RNN</p>
+<p>  双向的RNN，上下叠加在一起组成的，相当于前后的序列信息加在一起。</p>
+</li>
+<li><p>Deep (Bidirectional) RNN</p>
+<p>  顾名思义，更深层的结构，为了更强的表达能力</p>
+</li>
+<li><p>Echo State Network</p>
+<p>  回声状态网络，主要的特点就是它有一个“存储库”，使用大规模随机连接的循环网络取代经典神经网络中的中间层，一般称为reservoir，来存储相关的信息和保存时间特性。</p>
+</li>
+<li><p>LSTM (Long Short-Term Memory)</p>
+<p>  简单来说增加了一个传输状态，用于记录长期的信息，内部有忘记、选择记忆、和输出三个阶段。</p>
+</li>
+<li><p>Gated Recurrent Unit</p>
+<p>  GRU是对LSTM的一个简化，只使用了一个更新门。</p>
+</li>
+<li><p>BiLSTM(Bi-directional LSTM)</p>
+<p>  双向LSTM</p>
+</li>
+</ul>
+<h2 id="注意力机制"><a href="#注意力机制" class="headerlink" title="注意力机制"></a>注意力机制</h2><p>Attention机制最早提出是在视觉领域，2014年Google Mind发表了《Recurrent Models of Visual Attention》，采用了RNN模型，并加入了Attention机制来进行图像的分类。</p>
+<p>2015年，Bahdanau等人在论文《Neural Machine Translation by Jointly Learning to Align and Translate》中，将attention机制首次应用在nlp领域，其采用Seq2Seq+Attention模型来进行机器翻译。</p>
+<p>2017年，Google 机器翻译团队发表的《Attention is All You Need》成了划时代的论文，完全抛弃了RNN和CNN等网络结构，而仅仅采用Attention机制来进行机器翻译任务，取得了很好的效果，注意力机制也成了研究热点。</p>
+<ul>
+<li><p>抽象理解</p>
+<p>  从注意力三个字就可以抽象理解到，输入信息有很多特征，学习的时候不仅是特征提出，也要做重要程度的标记，或者说特征权重，这就是注意力机制。</p>
+</li>
+<li><p>Seq2Seq Attention</p>
+<p>  decoder中的信息定义为Query，encoder中的信息定义为Key，Query和Key通过多种计算方式得到权重值，生成一个注意力的context，再和之前的context结合，最后decoder输出结果。</p>
+<p>  笼统来说就是decoder每预测一个词，都拿着decoder现在的信息去和encoder所有信息做注意力的计算。基本上所有的attention都采用了这个原理，只不过算权重的函数形式可能会有所不同，但想法相同。</p>
+</li>
+<li><p>self-attention</p>
+<p>  自注意力的思想很简单，建立两两之间的注意力权重，作用时与特征信息线性加权。</p>
+</li>
+<li><p>Multi-head attention</p>
+<p>  多头注意力与自注意力的核心原理差不多，由多个自注意力组成，相当于从多个角度关注。</p>
+</li>
+<li><p>Transformer</p>
+<p>  Transformer也是由 Encoder-Decoder 结构组成，但不是RNN中的Encoder-Decoder，简单说就是直接对词向量使用注意力。(Query, Key, Value)</p>
+<p>  参考：<a href="%5Bhttps://link%5D(http://jalammar.github.io/illustrated-transformer/)">The Illustrated Transformer</a></p>
+</li>
+</ul>
+</div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">神经网络</a><a class="link-muted mr-2" rel="tag" href="/tags/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/">自然语言处理</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/09/10/18/clg9h4pn00005msikcwad2opj/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">深度学习平台, I&#039;m Free God !</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/08/15/21/clg9h4pnm001nmsik0r405mw4/"><span class="level-item">神经网络剪枝综述</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="香槟酒气满天飞"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">香槟酒气满天飞</p><p class="is-size-6 is-block">有目标的人才迷路，我是来人间散步的</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>地球，银河系，C137宇宙</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">38</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/kangxiatao" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/kangxiatao"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="哔哩哔哩" href="https://space.bilibili.com/26509662"><i class="fab fa-youtube"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="豆瓣" href="https://www.douban.com/people/anoi/"><i class="fab fa-imdb"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#前言"><span class="level-left"><span class="level-item">前言</span></span></a></li><li><a class="level is-mobile" href="#神经网络自然语言处理的基本思想"><span class="level-left"><span class="level-item">神经网络自然语言处理的基本思想</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#理解词语"><span class="level-left"><span class="level-item">理解词语</span></span></a></li><li><a class="level is-mobile" href="#理解句子"><span class="level-left"><span class="level-item">理解句子</span></span></a></li></ul></li><li><a class="level is-mobile" href="#循环神经网络"><span class="level-left"><span class="level-item">循环神经网络</span></span></a></li><li><a class="level is-mobile" href="#注意力机制"><span class="level-left"><span class="level-item">注意力机制</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-09T03:45:03.000Z">2023-04-09</time></p><p class="title"><a href="/2023/04/09/11/clg9h4pnj001fmsik50jkg68v/">研究下管理体系</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">学习日志</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-04-09T01:42:46.000Z">2023-04-09</time></p><p class="title"><a href="/2023/04/09/09/clg9h4pnc000tmsik3hmpdipk/">一个思考，关于硅基生命</a></p><p class="categories"><a href="/categories/%E6%B5%AE%E7%94%9F%E6%97%A5%E8%AE%B0/">浮生日记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-14T05:30:00.000Z">2023-03-14</time></p><p class="title"><a href="/2023/03/14/13/clg9h4pn5000bmsik5op559z4/">ROS与Gazebo联合仿真平台搭建</a></p><p class="categories"><a href="/categories/%E7%A0%81%E5%86%9C%E7%AC%94%E8%AE%B0/">码农笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-10T01:09:00.000Z">2023-03-10</time></p><p class="title"><a href="/2023/03/10/09/clg9h4pn9000lmsik6yq0298x/">以武服人</a></p><p class="categories"><a href="/categories/%E6%B5%AE%E7%94%9F%E6%97%A5%E8%AE%B0/">浮生日记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-29T03:01:43.000Z">2022-09-29</time></p><p class="title"><a href="/2022/09/29/11/clg9h4pnk001hmsikdhiy8t41/">深度学习之底层实现</a></p><p class="categories"><a href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">学习日志</a></p></div></article></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div><p class="help">kangxiatao@gmail.com</p></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="AnoI" height="28"></a><p class="is-size-7"><span>&copy; 2023 Kang Xiatao</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="To WeiBo" href="https://weibo.com/u/5639381621?ssl_rnd=1624881304.5599&amp;is_all=1"><i class="fab fa-weibo"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="To GitHub" href="https://github.com/kangxiatao"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
