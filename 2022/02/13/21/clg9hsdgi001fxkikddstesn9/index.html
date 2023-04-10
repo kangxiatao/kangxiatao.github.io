@@ -29,7 +29,119 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body class="is-2-column"><script src="/js/cursor2.js"></script><script type="text/javascript">$.shuicheMouse();</script><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="AnoI" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">类别</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="To GitHub" href="https://github.com/kangxiatao"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-13T13:40:24.000Z" title="2022/2/13 21:40:24">2022-02-13</time>发表</span><span class="level-item"><time dateTime="2022-03-16T14:20:53.657Z" title="2022/3/16 22:20:53">2022-03-16</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">学习日志</a></span></div></div><h1 class="title is-3 is-size-4-mobile">深度学习模型泛化相关研究</h1><div class="content"><h2 id="人工智能？道可道非恒道！"><a href="#人工智能？道可道非恒道！" class="headerlink" title="人工智能？道可道非恒道！"></a>人工智能？道可道非恒道！</h2><p>有点无趣，2022年了，人工智能还处于暴力学习的阶段。</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body class="is-2-column"><script src="/js/cursor2.js"></script><script type="text/javascript">$.shuicheMouse();</script><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="AnoI" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">类别</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="To GitHub" href="https://github.com/kangxiatao"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-13T13:40:24.000Z" title="2022/2/13 21:40:24">2022-02-13</time>发表</span><span class="level-item"><time dateTime="2022-03-16T14:20:53.657Z" title="2022/3/16 22:20:53">2022-03-16</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">学习日志</a></span></div></div><h1 class="title is-3 is-size-4-mobile">深度学习模型泛化相关研究</h1><div class="content"><h2 id="人工智能？道可道非恒道！"><a href="#人工智能？道可道非恒道！" class="headerlink" title="人工智能？道可道非恒道！"></a>人工智能？道可道非恒道！</h2><p>有点无趣，2022年了，人工智能还处于暴力学习的阶段。</p>
 <p>去年我的大半时间花在神经网络的可解释性上，然后利用隐式损失和耦合梯度设计了在初始化前修剪模型的方法。<br>在应用层面似乎有些许价值，可是不论多大的稀疏率，大量的样本和模型暴力的求解方法总是显得深度学习有点蠢。<br>我对神经网络超长的训练时间愈发反感，虽然看过不少文献在模型优化方面的研究，但确实是不太看好目前模型的训练方式。</p>
 <p>多模态和自学习等研究带来了一些曙光，但道可道非恒道。<br>我不知道当前在某个尺度空间下所谓人工智能的表现结果智能何在，且不说非一成不变的万物。<br>那么在对于人来说都是非恒道的世间，模型的泛化又能到何等地步？</p>
 <p>书生意气，我不配在哲学层面讨论，毕竟目前的人工笨蛋也达不到。<br>虽然有一种基础科学被质子锁死的感觉，但路还是要一步步走的，在此记录一些深度学习模型泛化的相关研究。</p>
